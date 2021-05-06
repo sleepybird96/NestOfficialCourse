@@ -28,7 +28,7 @@ export class CoffeesService {
   }
 
   async findOne(id: string) {
-    const coffee = this.coffeeRepository.findOne(id, {
+    const coffee = await this.coffeeRepository.findOne(id, {
       relations: ['flavors'],
     });
     if (!coffee) {

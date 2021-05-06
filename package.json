@@ -78,7 +78,6 @@
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   },
-
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged && lint-staged"
