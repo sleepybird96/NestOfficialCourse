@@ -40,9 +40,7 @@ export class CoffeesService {
 
   async create(createCoffeeDto: CreateCoffeeDto) {
     const flavors = await Promise.all(
-      createCoffeeDto.flavors.map((flavor) =>
-        this.preLoadFlavorByName(flavor.name),
-      ),
+      createCoffeeDto.flavors.map((name) => this.preLoadFlavorByName(name)),
     );
 
     const coffee = this.coffeeRepository.create({
@@ -56,9 +54,7 @@ export class CoffeesService {
     const flavors =
       updateCoffeeDto.flavors &&
       (await Promise.all(
-        updateCoffeeDto.flavors.map((flavor) =>
-          this.preLoadFlavorByName(flavor.name),
-        ),
+        updateCoffeeDto.flavors.map((name) => this.preLoadFlavorByName(name)),
       ));
 
     const coffee = await this.coffeeRepository.preload({
