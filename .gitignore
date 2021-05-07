@@ -35,3 +35,6 @@ lerna-debug.log*
 
 # .gitignore파일에 .eslintcache 항목 추가
 .eslintcache
+
+# Env
+*.env
