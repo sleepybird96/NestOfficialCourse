@@ -15,7 +15,9 @@ import { CreateCoffeeDto } from './dto/create-coffee.dto';
 import { UpdateCoffeeDto } from './dto/update-coffee.dto';
 import { Public } from '../common/decorator/public.decorator';
 import { ParseIntPipe } from '../common/pipes/parse-int.pipe';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('커피')
 @Controller('coffees')
 export class CoffeesController {
   constructor(private readonly coffeesService: CoffeesService) {}
